@@ -1,4 +1,5 @@
-AppNoticias/
+.DS_Store
+./AppNoticias/
 AppNoticias/Pods/
 AppNoticias/AppNoticias.xcworkspace
 AppNoticias/Podfile.lock
