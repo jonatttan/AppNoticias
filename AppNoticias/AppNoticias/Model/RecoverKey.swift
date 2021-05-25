@@ -15,7 +15,6 @@ class RecoverKey: NSObject {
         guard let dictionary = NSDictionary(contentsOfFile: pathToDictionary) else { return nil }
         return dictionary
     }
-    
     func recKey() -> String {
         guard let dictionary = caminho() else { return "" }
         guard let key = dictionary["ApiKey"] as? String else { return "" }

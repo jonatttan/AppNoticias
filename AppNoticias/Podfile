@@ -16,7 +16,10 @@ target 'AppNoticias' do
     # Pods for testing
   end
   
-  pod 'Alamofire', '~> 4.7.0'
+  pod 'Alamofire', '~> 5.2'
+  #pod 'Alamofire', '~> 4.7.0'
+  #pod 'AlamofireImage', '~> 3.4.0'
+  pod 'AlamofireImage', '~> 4.1'
   pod 'SwiftLint'
 
 end

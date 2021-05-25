@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource { //  UITableViewDelegate,
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tbView: UITableView!
     var artigos: [Article] = []
@@ -18,19 +18,21 @@ class ViewController: UIViewController, UITableViewDataSource { //  UITableViewD
     func recuperaArtigos() {
         RequestAPI().request { (artigos) in
             self.artigos = artigos
-            print(artigos.count)
             self.tbView.reloadData()
         }
     }
 }
 extension ViewController {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(artigos.count)
         return artigos.count
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "news-cell", for: indexPath) as? LayoutTableViewCell
         if let celula = cell {
+            celula.configCell(artigos[indexPath.row])
             return celula
         }
         return LayoutTableViewCell()
