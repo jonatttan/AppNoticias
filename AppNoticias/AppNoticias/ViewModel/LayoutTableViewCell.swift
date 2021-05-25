@@ -12,6 +12,8 @@ class LayoutTableViewCell: UITableViewCell {
 
     @IBOutlet weak var imgNoticia: UIImageView!
     @IBOutlet weak var lbTituloNoticia: UILabel!
+    @IBAction func btOpenNew(_ sender: UIButton) {
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -38,5 +38,6 @@ struct DadosRequest {
     public static let linguagePt = "&language=pt"
     public static let pageSize = "&pageSize=50"
     public static let page = "&page="
+    public static var pag = 1
     public static let apiKey = RecoverKey().recKey()
 }

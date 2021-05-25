@@ -40,9 +40,18 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8D-2C-uMU">
+                                                    <rect key="frame" x="281" y="50" width="46" height="30"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="btOpenNew:" destination="3m0-ax-8Sr" eventType="touchUpInside" id="34m-GS-IkY"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="k8D-2C-uMU" secondAttribute="bottom" id="46O-Rb-xQd"/>
                                                 <constraint firstItem="cBh-3S-g3N" firstAttribute="top" secondItem="s6i-q9-jHA" secondAttribute="top" constant="10" id="Fm1-N6-meg"/>
+                                                <constraint firstAttribute="trailing" secondItem="k8D-2C-uMU" secondAttribute="trailing" constant="16" id="HGC-Eg-QwQ"/>
                                                 <constraint firstItem="weI-Ee-ZoS" firstAttribute="top" secondItem="s6i-q9-jHA" secondAttribute="top" constant="10" id="JdC-Vg-QPC"/>
                                                 <constraint firstItem="weI-Ee-ZoS" firstAttribute="leading" secondItem="s6i-q9-jHA" secondAttribute="leading" constant="10" id="M7o-ar-51v"/>
                                                 <constraint firstItem="cBh-3S-g3N" firstAttribute="leading" secondItem="weI-Ee-ZoS" secondAttribute="trailing" constant="18" id="k6a-Ji-hh5"/>
