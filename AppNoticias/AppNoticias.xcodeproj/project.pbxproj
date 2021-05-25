@@ -63,7 +63,6 @@
 		89647D9F265C2D0C007C9A3D /* AppNoticiasUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNoticiasUITests.swift; sourceTree = "<group>"; };
 		89647DA1265C2D0C007C9A3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89647DB3265C2D4C007C9A3D /* RequestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAPI.swift; sourceTree = "<group>"; };
-		89647DC3265C3046007C9A3D /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		89647DC7265C391D007C9A3D /* StructAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructAPI.swift; sourceTree = "<group>"; };
 		89647DE9265D25E9007C9A3D /* RecoverKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverKey.swift; sourceTree = "<group>"; };
 		89647E0B265D3D3B007C9A3D /* LayoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutTableViewCell.swift; sourceTree = "<group>"; };
@@ -146,7 +145,6 @@
 				89647D88265C2D0B007C9A3D /* LaunchScreen.storyboard */,
 				89647D8B265C2D0B007C9A3D /* Info.plist */,
 				89647D83265C2D09007C9A3D /* AppNoticias.xcdatamodeld */,
-				89647DC3265C3046007C9A3D /* MyPlayground.playground */,
 			);
 			path = AppNoticias;
 			sourceTree = "<group>";
