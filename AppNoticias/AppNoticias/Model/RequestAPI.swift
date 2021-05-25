@@ -19,7 +19,7 @@ class RequestAPI {
             } catch {
                 guard let status = response.response?.statusCode else { return }
                 print("Erro \(status)")
-                // Fazer um enum de errors para retornar
+                // Fazer um enum de errors para retornar (429: Sem mais noticias)
             }
         }
         DadosRequest.pag += 1
