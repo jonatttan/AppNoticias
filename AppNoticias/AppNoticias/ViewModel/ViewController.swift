@@ -23,6 +23,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 }
 extension ViewController {
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return 2
+//    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return artigos.count
     }

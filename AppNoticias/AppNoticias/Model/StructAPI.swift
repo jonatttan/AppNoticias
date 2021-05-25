@@ -36,5 +36,7 @@ struct Article: Codable {
 struct DadosRequest {
     public static let firstEnd = "https://newsapi.org/v2/everything?q=tecnologia"
     public static let linguagePt = "&language=pt"
+    public static let pageSize = "&pageSize=50"
+    public static let page = "&page="
     public static let apiKey = RecoverKey().recKey()
 }
