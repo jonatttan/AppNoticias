@@ -1,7 +1,5 @@
-*.plist
-.DS_Store
+*.DS_Store
 AppNoticias/Pods
 AppNoticias/AppNoticias.xcworkspace
 AppNoticias/Podfile.lock
 AppNoticias/AppNoticias/Info.plist
-AppNoticias/.DS_Store
