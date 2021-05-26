@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tbView: UITableView!
-    public var category: CategoryNews = .ESPORTE
+    public var category: CategoryNews?
     var artigos: [Article] = []
     var loading = false
     
@@ -24,6 +24,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             //
     }
     func recuperaArtigos() {
+        guard let category = self.category else { return }
         RequestAPI().request(category) { (artigos) in
             self.artigos += artigos
             self.tbView.reloadData()

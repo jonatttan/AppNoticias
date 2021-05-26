@@ -10,12 +10,19 @@ import UIKit
 class HomeTableViewController: UITableViewController {
 
     let listNews: [CategoryNews] = [.TECNOLOGIA, .CIENCIA, .ESPORTE, .TURISMO]
+    var viewController: ViewController?
     override func viewDidLoad() {
         super.viewDidLoad()
         print( CategoryData().getData(listNews.first?.rawValue ?? ""))
     }
     override func viewDidAppear(_ animated: Bool) {
         tableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "news-screen" {
+            viewController = segue.destination as? ViewController
+        }
     }
 
     // MARK: - Table view data source
@@ -36,11 +43,7 @@ class HomeTableViewController: UITableViewController {
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let telaNoticias = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "list-news-screen") as? ViewController
-        guard let tela = telaNoticias else { return }
-        tela.category = listNews[indexPath.row]
-        tela.modalPresentationStyle = .fullScreen
-        present(tela, animated: true, completion: nil)
+        viewController?.category = listNews[indexPath.row]
     }
 
     /*
