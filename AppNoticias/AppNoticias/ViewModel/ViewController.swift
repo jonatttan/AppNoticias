@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tbView: UITableView!
+    public var category: CategoryNews = .ESPORTE
     var artigos: [Article] = []
     var loading = false
     
@@ -23,7 +24,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             //
     }
     func recuperaArtigos() {
-        RequestAPI().request { (artigos) in
+        RequestAPI().request(category) { (artigos) in
             self.artigos += artigos
             self.tbView.reloadData()
         }
@@ -66,7 +67,7 @@ extension ViewController {
 //        print("Y: \(offY) \nHeight: \(gatilho)\(offY > gatilho - 100 ? "--" : "----")")
         if (offY > gatilho) && !loading {
             loadMore()
-            print("Opaaa página \(DadosRequest.pag) ---------------")
+            print("Opaaa página \(DataRequest.pag) ---------------")
         }
     }
     func loadMore() {

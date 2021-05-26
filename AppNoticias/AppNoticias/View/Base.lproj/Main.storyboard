@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4hh-f1-DqV">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,10 +8,69 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Home Table View Controller-->
+        <scene sceneID="UNL-hs-bGz">
+            <objects>
+                <tableViewController id="4hh-f1-DqV" customClass="HomeTableViewController" customModule="AppNoticias" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WGJ-Mg-4ZQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="new-category" rowHeight="120" id="3YK-Sj-ynU" customClass="HomeTableViewCell" customModule="AppNoticias" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3YK-Sj-ynU" id="nMZ-gV-twp">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qh0-7j-dSQ">
+                                            <rect key="frame" x="7" y="6" width="195" height="108"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="108" id="fws-W4-kN7"/>
+                                                <constraint firstAttribute="width" constant="195" id="hoW-ht-hvO"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6D-hw-zsA">
+                                            <rect key="frame" x="210" y="26" width="149" height="56"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="149" id="1ec-fv-BPQ"/>
+                                                <constraint firstAttribute="height" constant="56" id="WVV-9d-BsA"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="W6D-hw-zsA" firstAttribute="trailing" secondItem="nMZ-gV-twp" secondAttribute="trailingMargin" id="L5l-06-NQq"/>
+                                        <constraint firstItem="qh0-7j-dSQ" firstAttribute="top" secondItem="nMZ-gV-twp" secondAttribute="top" constant="6" id="Y0c-dS-Uvb"/>
+                                        <constraint firstItem="qh0-7j-dSQ" firstAttribute="leading" secondItem="nMZ-gV-twp" secondAttribute="leading" constant="7" id="b8L-YR-0w6"/>
+                                        <constraint firstAttribute="bottom" secondItem="qh0-7j-dSQ" secondAttribute="bottom" constant="6" id="etl-ev-rWe"/>
+                                        <constraint firstItem="W6D-hw-zsA" firstAttribute="top" secondItem="nMZ-gV-twp" secondAttribute="topMargin" constant="15" id="sIJ-fP-1vz"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="W6D-hw-zsA" secondAttribute="bottom" constant="27" id="zW5-Ro-rPz"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imgPoster" destination="qh0-7j-dSQ" id="pda-q2-9LP"/>
+                                    <outlet property="lbTitleCategory" destination="W6D-hw-zsA" id="ufY-It-3Km"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="4hh-f1-DqV" id="b8C-oQ-TY9"/>
+                            <outlet property="delegate" destination="4hh-f1-DqV" id="2wi-Mo-e4J"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BC5-YQ-D7w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1007.2" y="51.724137931034484"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AppNoticias" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="list-news-screen" id="BYZ-38-t0r" customClass="ViewController" customModule="AppNoticias" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,18 +99,9 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8D-2C-uMU">
-                                                    <rect key="frame" x="281" y="50" width="46" height="30"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <connections>
-                                                        <action selector="btOpenNew:" destination="3m0-ax-8Sr" eventType="touchUpInside" id="34m-GS-IkY"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="k8D-2C-uMU" secondAttribute="bottom" id="46O-Rb-xQd"/>
                                                 <constraint firstItem="cBh-3S-g3N" firstAttribute="top" secondItem="s6i-q9-jHA" secondAttribute="top" constant="10" id="Fm1-N6-meg"/>
-                                                <constraint firstAttribute="trailing" secondItem="k8D-2C-uMU" secondAttribute="trailing" constant="16" id="HGC-Eg-QwQ"/>
                                                 <constraint firstItem="weI-Ee-ZoS" firstAttribute="top" secondItem="s6i-q9-jHA" secondAttribute="top" constant="10" id="JdC-Vg-QPC"/>
                                                 <constraint firstItem="weI-Ee-ZoS" firstAttribute="leading" secondItem="s6i-q9-jHA" secondAttribute="leading" constant="10" id="M7o-ar-51v"/>
                                                 <constraint firstItem="cBh-3S-g3N" firstAttribute="leading" secondItem="weI-Ee-ZoS" secondAttribute="trailing" constant="18" id="k6a-Ji-hh5"/>

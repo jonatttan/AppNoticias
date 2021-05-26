@@ -9,8 +9,9 @@ import UIKit
 import Alamofire
 
 class RequestAPI {
-    let endereco = "\(DadosRequest.firstEnd)\(DadosRequest.page)\(DadosRequest.pag)\(DadosRequest.linguagePt)\(DadosRequest.apiKey)"
-    func request(completionHandler: @escaping([Article]) -> Void) { // queue: DispatchQueue = .main,
+    
+    func request(_ categoria: CategoryNews = .CIENCIA, completionHandler: @escaping([Article]) -> Void) { // queue: DispatchQueue = .main,
+        let endereco = "\(DataRequest.firstEnd)\(categoria.rawValue)\(DataRequest.page)\(DataRequest.pag)\(DataRequest.linguagePt)\(DataRequest.apiKey)"
         AF.request(endereco, method: .get).responseJSON { (response) in
             guard let dadosResposta = response.data else { return }
             do {
@@ -22,6 +23,6 @@ class RequestAPI {
                 // Fazer um enum de errors para retornar (429: Sem mais noticias)
             }
         }
-        DadosRequest.pag += 1
+        DataRequest.pag += 1
     }
 }
