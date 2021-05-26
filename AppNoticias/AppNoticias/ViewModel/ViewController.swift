@@ -10,22 +10,21 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tbView: UITableView!
-    public var category: CategoryNews?
-    var artigos: [Article] = []
+    var request: RequestAPI?
+    var artigos: [ArticleModel] = []
     var loading = false
+    var titleWindow = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = self.titleWindow
         recuperaArtigos()
         let loadCell = UINib(nibName: "LoadingTableViewCell", bundle: nil)
         self.tbView.register(loadCell, forCellReuseIdentifier: "loading-cell")
     }
-    override func viewWillAppear(_ animated: Bool) {
-            //
-    }
     func recuperaArtigos() {
-        guard let category = self.category else { return }
-        RequestAPI().request(category) { (artigos) in
+        guard let objRequest = self.request else { return }
+        objRequest.request { (artigos) in
             self.artigos += artigos
             self.tbView.reloadData()
         }
@@ -64,11 +63,9 @@ extension ViewController {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offY = scrollView.contentOffset.y
         let contHeight = scrollView.contentSize.height
-        let gatilho = contHeight - scrollView.frame.height - 40// 450
-//        print("Y: \(offY) \nHeight: \(gatilho)\(offY > gatilho - 100 ? "--" : "----")")
+        let gatilho = contHeight - scrollView.frame.height - 40
         if (offY > gatilho) && !loading {
             loadMore()
-            print("Opaaa página \(DataRequest.pag) ---------------")
         }
     }
     func loadMore() {

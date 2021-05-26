@@ -9,13 +9,19 @@ import UIKit
 import Alamofire
 
 class RequestAPI {
+    var pagina = 1
+    let category: CategoryNews
     
-    func request(_ categoria: CategoryNews = .CIENCIA, completionHandler: @escaping([Article]) -> Void) { // queue: DispatchQueue = .main,
-        let endereco = "\(DataRequest.firstEnd)\(categoria.rawValue)\(DataRequest.page)\(DataRequest.pag)\(DataRequest.linguagePt)\(DataRequest.apiKey)"
+    init(_ category: CategoryNews) {
+        self.category = category
+    } 
+    func request(completionHandler: @escaping([ArticleModel]) -> Void) {
+        let endereco = "\(DataRequest.firstEnd)\(self.category.rawValue)\(DataRequest.page)\(self.pagina)\(DataRequest.linguagePt)\(DataRequest.apiKey)"
+        print("********** \(DataRequest.firstEnd)\(self.category.rawValue)\(DataRequest.page)\(self.pagina)\(DataRequest.linguagePt) ***********")
         AF.request(endereco, method: .get).responseJSON { (response) in
             guard let dadosResposta = response.data else { return }
             do {
-                let dadosRecebidos = try JSONDecoder().decode(News.self, from: dadosResposta)
+                let dadosRecebidos = try JSONDecoder().decode(NewsModel.self, from: dadosResposta)
                 completionHandler(dadosRecebidos.articles)
             } catch {
                 guard let status = response.response?.statusCode else { return }
@@ -23,6 +29,6 @@ class RequestAPI {
                 // Fazer um enum de errors para retornar (429: Sem mais noticias)
             }
         }
-        DataRequest.pag += 1
+        self.pagina += 1
     }
 }

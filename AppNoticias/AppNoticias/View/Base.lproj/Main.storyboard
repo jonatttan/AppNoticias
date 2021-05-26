@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="-1866" y="52"/>
         </scene>
-        <!--Home Table View Controller-->
+        <!--Home-->
         <scene sceneID="UNL-hs-bGz">
             <objects>
                 <tableViewController id="4hh-f1-DqV" customClass="HomeTableViewController" customModule="AppNoticias" customModuleProvider="target" sceneMemberID="viewController">
@@ -79,7 +79,7 @@
                             <outlet property="delegate" destination="4hh-f1-DqV" id="2wi-Mo-e4J"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="2tH-ZI-AjZ"/>
+                    <navigationItem key="navigationItem" title="Home" id="2tH-ZI-AjZ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BC5-YQ-D7w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

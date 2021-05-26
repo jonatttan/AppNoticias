@@ -9,7 +9,7 @@ import UIKit
 
 class HomeTableViewController: UITableViewController {
 
-    let listNews: [CategoryNews] = [.TECNOLOGIA, .CIENCIA, .ESPORTE, .TURISMO]
+    let listNews: [CategoryNews] = CategoryData().getListCategory()
     var viewController: ViewController?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,7 @@ class HomeTableViewController: UITableViewController {
         return 1
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 210
+        return 180
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listNews.count
@@ -43,32 +43,8 @@ class HomeTableViewController: UITableViewController {
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewController?.category = listNews[indexPath.row]
+        viewController?.titleWindow = CategoryData().getData(listNews[indexPath.row].rawValue)[0]
+        viewController?.request = RequestAPI(listNews[indexPath.row])
     }
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

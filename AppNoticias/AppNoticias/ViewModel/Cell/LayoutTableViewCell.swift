@@ -12,17 +12,8 @@ class LayoutTableViewCell: UITableViewCell {
 
     @IBOutlet weak var imgNoticia: UIImageView!
     @IBOutlet weak var lbTituloNoticia: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
-    }
-    func configCell(_ artigo: Article) {
+    func configCell(_ artigo: ArticleModel) {
         guard let urlImage = URL(string: artigo.urlToImage) else { return }
         self.imgNoticia.af.setImage(withURL: urlImage)
         self.imgNoticia.layer.cornerRadius = 10

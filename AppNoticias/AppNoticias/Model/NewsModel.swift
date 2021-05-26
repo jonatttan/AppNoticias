@@ -7,23 +7,20 @@
 
 import Foundation
 
-public struct News: Codable {
+public struct NewsModel: Codable {
     
-    let articles: [Article]
+    let articles: [ArticleModel]
 }
 
-struct Article: Codable {
+struct ArticleModel: Codable {
     let title: String
     let url: String
     let urlToImage: String
 }
-
-
 struct DataRequest {
     public static let firstEnd = "https://newsapi.org/v2/everything?"
     public static let linguagePt = "&language=pt"
     public static let pageSize = "&pageSize=50"
     public static let page = "&page="
-    public static var pag = 1
     public static let apiKey = RecoverKey().recKey()
 }
