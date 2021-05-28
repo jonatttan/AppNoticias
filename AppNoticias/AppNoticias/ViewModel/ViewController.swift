@@ -18,7 +18,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = self.titleWindow
-        recuperaArtigos()
+//        recuperaArtigos()
         let loadCell = UINib(nibName: "LoadingTableViewCell", bundle: nil)
         self.tbView.register(loadCell, forCellReuseIdentifier: "loading-cell")
     }
@@ -63,7 +63,7 @@ extension ViewController {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offY = scrollView.contentOffset.y
         let contHeight = scrollView.contentSize.height
-        let gatilho = contHeight - scrollView.frame.height - 40
+        let gatilho = contHeight - scrollView.frame.height - 240
         if (offY > gatilho) && !loading {
             loadMore()
         }
@@ -72,8 +72,8 @@ extension ViewController {
         if !self.loading {
             self.loading = true
             DispatchQueue.global().async {
-                sleep(1)
                 self.recuperaArtigos()
+                sleep(2)
                 self.loading = false
             }
         }
