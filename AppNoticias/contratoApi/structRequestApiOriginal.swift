@@ -1,7 +1,5 @@
-import Foundation
-
-struct Noticias {
-    let status: String
+    fsdfdfssd
+fsdfsdfsdlet status: String
     let totalResults: Int
     let articles: [Article]
 }
